@@ -1,57 +1,53 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102c25"><title>Не Курю — каждый день важен</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101a17">
+<title>Не Курю — твой новый ритм</title>
 <style>
-:root{--bg:#f3f7f3;--card:#fff;--ink:#18342b;--muted:#718078;--green:#287b58;--mint:#dff2e7;--line:#e1eae3;--orange:#f3b66d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-header{background:linear-gradient(135deg,#102c25,#246449);color:white;padding:28px 20px 34px;border-radius:0 0 28px 28px}
-.wrap{max-width:850px;margin:auto}header .brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#bce5ce;font-weight:700}h1{font-size:clamp(32px,7vw,48px);line-height:1.05;margin:12px 0}header p{margin:0;color:#d6e9de}
-main{padding:20px;max-width:850px;margin:auto}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 5px 20px #193d2810}.hero{grid-column:1/-1;background:var(--mint);border:0}.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}.big{font-size:clamp(28px,6vw,42px);font-weight:800;letter-spacing:-.04em;margin:5px 0}.sub{color:var(--muted);font-size:14px}.hero .big{color:var(--green)}h2{font-size:21px;margin:26px 0 12px}.timeline{display:grid;gap:10px}.milestone{display:flex;gap:12px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:16px}.dot{width:11px;height:11px;background:var(--green);border-radius:50%;margin-top:6px;flex:none}.milestone b{display:block}.milestone p{margin:3px 0 0;color:var(--muted);font-size:14px}.settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.field input{width:100%;border:1px solid #ccd9cf;border-radius:12px;padding:12px;font:inherit;background:white;color:var(--ink)}button{border:0;border-radius:12px;background:var(--green);color:white;font:700 15px system-ui;padding:13px 18px;cursor:pointer;width:100%;margin-top:14px}button:hover{filter:brightness(.95)}.note{font-size:12px;color:var(--muted);margin-top:14px}footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 10px}
-@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{grid-column:1/-1}.settings{grid-template-columns:repeat(4,minmax(0,1fr))}}
+:root{--bg:#101a17;--panel:#192722;--panel2:#202f29;--text:#f0f6f1;--muted:#9aafa2;--lime:#c8f169;--mint:#a8f0cf;--stroke:#304139;--glow:#c8f16920}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#244438 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:980px;margin:auto;padding:0 20px}header{padding:28px 0 32px}.top{display:flex;align-items:center;justify-content:space-between}.brand{font-size:13px;letter-spacing:.14em;font-weight:800;color:var(--lime)}.tag{border:1px solid var(--stroke);border-radius:99px;padding:6px 11px;color:var(--muted);font-size:12px}
+h1{font-size:clamp(38px,8vw,66px);line-height:.98;letter-spacing:-.06em;margin:40px 0 14px;max-width:680px}h1 em{font-style:normal;color:var(--lime)}header p{max-width:530px;color:var(--muted);margin:0;font-size:16px}
+main{padding:8px 0 40px}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--stroke);border-radius:22px;padding:18px;min-width:0}.hero{grid-column:1/-1;background:linear-gradient(125deg,#c8f169,#a9df7a);color:#182418;border:0;position:relative;overflow:hidden;padding:24px}.hero:after{content:"✳";position:absolute;font-size:150px;right:4%;top:-36px;opacity:.12}.label{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.hero .label{color:#40552c}.number{font-size:clamp(29px,7vw,43px);font-weight:850;letter-spacing:-.055em;line-height:1.2;margin:8px 0}.hero .number{font-size:clamp(42px,10vw,70px);color:#172817}.detail{font-size:13px;color:var(--muted)}.hero .detail{color:#40552c}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:32px 0 14px}.section-head h2{font-size:22px;letter-spacing:-.03em;margin:0}.section-head span{font-size:12px;color:var(--muted)}
+.timeline{display:grid;gap:10px}.milestone{display:flex;gap:13px;background:var(--panel);border:1px solid var(--stroke);border-radius:17px;padding:15px}.dot{width:9px;height:9px;border-radius:50%;background:var(--lime);margin-top:7px;flex:none;box-shadow:0 0 14px #c8f16950}.milestone b{display:block;font-size:14px}.milestone p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.settings{background:var(--panel);border:1px solid var(--stroke);border-radius:22px;padding:18px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field label{display:block;color:#c9d7ce;font-size:12px;font-weight:700;margin-bottom:7px}.field input{width:100%;min-width:0;background:#101a17;border:1px solid #3a4b41;border-radius:12px;padding:13px;color:var(--text);font:inherit;outline:none;appearance:none}.field input:focus{border-color:var(--lime);box-shadow:0 0 0 3px var(--glow)}.unit{font-size:11px;color:var(--muted);margin-top:5px}.btn{width:100%;border:0;border-radius:13px;padding:14px;background:var(--lime);color:#1c2a18;font:800 15px inherit;cursor:pointer;margin-top:18px}.btn:hover{filter:brightness(1.04)}.hint{color:var(--muted);font-size:12px;line-height:1.6;margin:12px 2px 0}.footer{padding:24px 0 36px;text-align:center;color:#6e8276;font-size:12px}
+@media(min-width:650px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:center}.form-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:390px){.wrap{padding:0 14px}.tile{padding:15px}.form-grid{grid-template-columns:1fr}.tag{display:none}}
 </style></head>
 <body>
-<header><div class="wrap"><div class="brand">✦ Не Курю</div><h1>Каждый день —<br>твоя победа.</h1><p>Отмечай прогресс. Замечай перемены. Береги себя.</p></div></header>
-<main>
-<section class="grid" aria-live="polite">
-<div class="card hero"><div class="eyebrow">Твой путь без сигарет</div><div class="big" id="days">0 дней</div><div class="sub" id="since">Начни отсчёт — и пусть каждый день имеет значение.</div></div>
-<div class="card"><div class="eyebrow">Сэкономлено</div><div class="big" id="money">0 ₽</div><div class="sub">деньги остались у тебя</div></div>
-<div class="card"><div class="eyebrow">Не выкурено</div><div class="big" id="cigs">0</div><div class="sub">сигарет</div></div>
-<div class="card"><div class="eyebrow">Смола*</div><div class="big" id="tar">0 г</div><div class="sub">расчётное количество</div></div>
-<div class="card"><div class="eyebrow">Никотин*</div><div class="big" id="nic">0 мг</div><div class="sub">расчётное количество</div></div>
+<header><div class="wrap"><div class="top"><div class="brand">✳ НЕ КУРЮ</div><div class="tag">Твой путь к свободе</div></div><h1>Дыши глубже.<br><em>Живи легче.</em></h1><p>Каждый день без сигарет — это твой выбор в пользу себя. Считай прогресс, замечай пользу и возвращай себе своё.</p></div></header>
+<main class="wrap">
+<section class="stats" aria-live="polite">
+<div class="tile hero"><div class="label">Время без сигарет</div><div class="number" id="days">0 дней</div><div class="detail" id="since">Твоя новая история начинается здесь.</div></div>
+<div class="tile"><div class="label">Экономия</div><div class="number" id="money">0 ₽</div><div class="detail">деньги остались у тебя</div></div>
+<div class="tile"><div class="label">Не выкурено</div><div class="number" id="cigs">0</div><div class="detail">сигарет</div></div>
+<div class="tile"><div class="label">Смола*</div><div class="number" id="tar">0 мг</div><div class="detail">расчётное избегаемое количество</div></div>
+<div class="tile"><div class="label">Никотин*</div><div class="number" id="nic">0 мг</div><div class="detail">расчётное избегаемое количество</div></div>
 </section>
-<h2>Польза для организма</h2><section class="timeline" id="benefits"></section>
-<h2>Настроить счётчик</h2><section class="card"><div class="settings">
+<div class="section-head"><h2>Изменения в организме</h2><span>ПО ЭТАПАМ</span></div><section class="timeline" id="benefits"></section>
+<div class="section-head"><h2>Твои параметры</h2><span>РУЧНОЙ ВВОД</span></div>
+<section class="settings"><div class="form-grid">
 <div class="field"><label for="quit">Дата отказа</label><input id="quit" type="date"></div>
-<div class="field"><label for="daily">Сигарет в день</label><input id="daily" type="number" min="1" max="100" value="10"></div>
-<div class="field"><label for="price">Цена пачки (₽)</label><input id="price" type="number" min="0" step="1" value="200"></div>
-<div class="field"><label for="pack">Сигарет в пачке</label><input id="pack" type="number" min="1" max="100" value="20"></div>
-</div><button id="save">Сохранить настройки</button><div class="note">Настройки сохраняются только в этом браузере на устройстве. Дата считается с начала выбранного дня.</div></section>
-<p class="note">*Смола и никотин — ориентировочные оценки по введённым средним значениям на сигарету (10 мг смолы и 1 мг никотина). Это не измерение фактического попадания в организм и не медицинская оценка.</p>
-</main><footer>Не Курю · Маленькие шаги складываются в большие перемены</footer>
+<div class="field"><label for="daily">Сигарет в день</label><input id="daily" type="number" min="0" step="1" inputmode="decimal" value="10"><div class="unit">Среднее количество</div></div>
+<div class="field"><label for="price">Цена пачки</label><input id="price" type="number" min="0" step="0.01" inputmode="decimal" value="200"><div class="unit">₽ за пачку</div></div>
+<div class="field"><label for="pack">Сигарет в пачке</label><input id="pack" type="number" min="1" step="1" inputmode="numeric" value="20"><div class="unit">Штук в пачке</div></div>
+<div class="field"><label for="tarPer">Смола на сигарету</label><input id="tarPer" type="number" min="0" step="0.1" inputmode="decimal" value="10"><div class="unit">мг · смотри на пачке</div></div>
+<div class="field"><label for="nicPer">Никотин на сигарету</label><input id="nicPer" type="number" min="0" step="0.1" inputmode="decimal" value="1"><div class="unit">мг · смотри на пачке</div></div>
+</div><button class="btn" id="save">Сохранить параметры</button><p class="hint">Введи значения с пачки — смола и никотин будут считаться по ним. Все поля редактируются вручную, никаких ползунков. Настройки сохраняются в этом браузере.</p></section>
+<p class="hint">*Это расчёт количества веществ, указанного на пачке, для сигарет, которых удалось избежать. Он не измеряет фактическое попадание веществ в организм: реальные значения зависят от способа курения и других факторов.</p>
+</main><div class="wrap footer">НЕ КУРЮ · Свобода складывается из дней</div>
 <script>
 const $=id=>document.getElementById(id);
-const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
-$('quit').value=today.toISOString().slice(0,10);
-const milestones=[
-[0,'Первый день','Организм начинает восстанавливаться после последней сигареты.'],
-[1,'Через 1 день','Уровень угарного газа в крови снижается, кислороду становится легче переноситься.'],
-[2,'Через 2 дня','Никотин в организме значительно снижается; могут меняться вкус и обоняние.'],
-[3,'Через 3 дня','Дыхание может ощущаться свободнее; возможны временные симптомы отмены.'],
-[7,'1 неделя','Ты уже закрепляешь новый ритм. Сон, настроение и тяга могут колебаться.'],
-[14,'2 недели','Кровообращение и переносимость нагрузки могут постепенно улучшаться.'],
-[30,'1 месяц','Кашель и одышка у многих постепенно уменьшаются.'],
-[90,'3 месяца','Работа лёгких и кровообращение могут заметно улучшаться.'],
-[365,'1 год','Продолжение отказа снижает долгосрочные риски для здоровья.']
-];
-function plural(n,a,b,c){n=Math.abs(n)%100;let n1=n%10;return n>10&&n<20?c:n1>1&&n1<5?b:n1===1?a:c}
-function render(){let start=new Date($('quit').value+'T00:00:00');if(isNaN(start)){return}let now=new Date();now.setHours(0,0,0,0);let days=Math.max(0,Math.floor((now-start)/86400000));let daily=Math.max(0,Number($('daily').value)||0),price=Math.max(0,Number($('price').value)||0),pack=Math.max(1,Number($('pack').value)||20);let cigarettes=days*daily;
-$('days').textContent=days+' '+plural(days,'день','дня','дней');$('since').textContent='С даты '+start.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
-$('money').textContent=Math.round(cigarettes/pack*price).toLocaleString('ru-RU')+' ₽';$('cigs').textContent=cigarettes.toLocaleString('ru-RU');$('tar').textContent=(cigarettes*10/1000).toLocaleString('ru-RU',{maximumFractionDigits:2})+' г';$('nic').textContent=(cigarettes*1).toLocaleString('ru-RU')+' мг';
-$('benefits').innerHTML=milestones.filter(m=>m[0]<=Math.max(days,0)).slice(-4).reverse().map(m=>'<article class="milestone"><span class="dot"></span><div><b>'+m[1]+'</b><p>'+m[2]+'</p></div></article>').join('')||'<article class="milestone"><span class="dot"></span><div><b>Твой первый шаг</b><p>Выбери дату отказа. Мы будем отмечать прогресс вместе с тобой.</p></div></article>';
-}
-$('save').addEventListener('click',()=>{localStorage.setItem('nekuryu-settings',JSON.stringify({quit:$('quit').value,daily:$('daily').value,price:$('price').value,pack:$('pack').value}));render();$('save').textContent='Сохранено ✓';setTimeout(()=>$('save').textContent='Сохранить настройки',1500)});
-try{const s=JSON.parse(localStorage.getItem('nekuryu-settings')||'null');if(s){for(const k of ['quit','daily','price','pack'])if(s[k]!==undefined)$(k).value=s[k]}}catch(e){}
-render();
+const nowLocal=new Date();nowLocal.setMinutes(nowLocal.getMinutes()-nowLocal.getTimezoneOffset());$('quit').value=nowLocal.toISOString().slice(0,10);
+const milestones=[[0,'Первый день','Организм начинает восстанавливаться после последней сигареты.'],[1,'24 часа','Уровень угарного газа в крови снижается.'],[2,'48 часов','Никотин значительно снижается; вкус и обоняние могут меняться.'],[3,'3 дня','Дыхание может ощущаться свободнее; возможны временные симптомы отмены.'],[7,'1 неделя','Ты закрепляешь новый ритм. Сон и настроение могут пока колебаться.'],[14,'2 недели','Кровообращение и переносимость нагрузки могут постепенно улучшаться.'],[30,'1 месяц','Кашель и одышка у многих постепенно уменьшаются.'],[90,'3 месяца','Работа лёгких и кровообращение могут заметно улучшаться.'],[365,'1 год','Продолжение отказа снижает долгосрочные риски для здоровья.']];
+const ids=['quit','daily','price','pack','tarPer','nicPer'];
+function plural(n,a,b,c){n=Math.abs(n)%100;let u=n%10;return n>10&&n<20?c:u>1&&u<5?b:u===1?a:c}
+function val(id,fallback=0){const n=Number($(id).value);return Number.isFinite(n)&&n>=0?n:fallback}
+function render(){const start=new Date($('quit').value+'T00:00:00');if(isNaN(start))return;const today=new Date();today.setHours(0,0,0,0);const days=Math.max(0,Math.floor((today-start)/86400000));const daily=val('daily'),price=val('price'),pack=Math.max(1,val('pack',20)),tar=val('tarPer'),nic=val('nicPer');const avoided=days*daily;
+$('days').textContent=days+' '+plural(days,'день','дня','дней');$('since').textContent='С '+start.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});$('money').textContent=(avoided/pack*price).toLocaleString('ru-RU',{maximumFractionDigits:2})+' ₽';$('cigs').textContent=avoided.toLocaleString('ru-RU');$('tar').textContent=(avoided*tar).toLocaleString('ru-RU',{maximumFractionDigits:1})+' мг';$('nic').textContent=(avoided*nic).toLocaleString('ru-RU',{maximumFractionDigits:1})+' мг';
+const earned=milestones.filter(m=>m[0]<=days).slice(-4).reverse();$('benefits').innerHTML=(earned.length?earned:[[0,'Твой первый шаг','Укажи дату отказа и параметры — счётчик начнёт отмечать твои достижения.']]).map(m=>'<article class="milestone"><span class="dot"></span><div><b>'+m[1]+'</b><p>'+m[2]+'</p></div></article>').join('')}
+function save(){const data={};ids.forEach(id=>data[id]=$(id).value);try{localStorage.setItem('nekuryu-settings',JSON.stringify(data))}catch(e){}render();$('save').textContent='Сохранено ✓';setTimeout(()=>$('save').textContent='Сохранить параметры',1400)}
+try{const saved=JSON.parse(localStorage.getItem('nekuryu-settings')||'null');if(saved)ids.forEach(id=>{if(saved[id]!==undefined)$(id).value=saved[id]})}catch(e){}
+$('save').addEventListener('click',save);ids.forEach(id=>$(id).addEventListener('input',render));render();
 </script></body></html>
