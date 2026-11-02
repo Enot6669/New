@@ -1,0 +1,16 @@
+{
+  "name": "ne-kuryu-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Не Курю — Android build wrapper",
+  "scripts": {
+    "build": "mkdir -p www && cp index.html www/index.html"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/android": "^7.4.3"
+  }
+}
