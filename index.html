@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102c25"><title>Не Курю — каждый день важен</title>
+<style>
+:root{--bg:#f3f7f3;--card:#fff;--ink:#18342b;--muted:#718078;--green:#287b58;--mint:#dff2e7;--line:#e1eae3;--orange:#f3b66d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:linear-gradient(135deg,#102c25,#246449);color:white;padding:28px 20px 34px;border-radius:0 0 28px 28px}
+.wrap{max-width:850px;margin:auto}header .brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#bce5ce;font-weight:700}h1{font-size:clamp(32px,7vw,48px);line-height:1.05;margin:12px 0}header p{margin:0;color:#d6e9de}
+main{padding:20px;max-width:850px;margin:auto}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 5px 20px #193d2810}.hero{grid-column:1/-1;background:var(--mint);border:0}.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}.big{font-size:clamp(28px,6vw,42px);font-weight:800;letter-spacing:-.04em;margin:5px 0}.sub{color:var(--muted);font-size:14px}.hero .big{color:var(--green)}h2{font-size:21px;margin:26px 0 12px}.timeline{display:grid;gap:10px}.milestone{display:flex;gap:12px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:16px}.dot{width:11px;height:11px;background:var(--green);border-radius:50%;margin-top:6px;flex:none}.milestone b{display:block}.milestone p{margin:3px 0 0;color:var(--muted);font-size:14px}.settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.field input{width:100%;border:1px solid #ccd9cf;border-radius:12px;padding:12px;font:inherit;background:white;color:var(--ink)}button{border:0;border-radius:12px;background:var(--green);color:white;font:700 15px system-ui;padding:13px 18px;cursor:pointer;width:100%;margin-top:14px}button:hover{filter:brightness(.95)}.note{font-size:12px;color:var(--muted);margin-top:14px}footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 10px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{grid-column:1/-1}.settings{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style></head>
+<body>
+<header><div class="wrap"><div class="brand">✦ Не Курю</div><h1>Каждый день —<br>твоя победа.</h1><p>Отмечай прогресс. Замечай перемены. Береги себя.</p></div></header>
+<main>
+<section class="grid" aria-live="polite">
+<div class="card hero"><div class="eyebrow">Твой путь без сигарет</div><div class="big" id="days">0 дней</div><div class="sub" id="since">Начни отсчёт — и пусть каждый день имеет значение.</div></div>
+<div class="card"><div class="eyebrow">Сэкономлено</div><div class="big" id="money">0 ₽</div><div class="sub">деньги остались у тебя</div></div>
+<div class="card"><div class="eyebrow">Не выкурено</div><div class="big" id="cigs">0</div><div class="sub">сигарет</div></div>
+<div class="card"><div class="eyebrow">Смола*</div><div class="big" id="tar">0 г</div><div class="sub">расчётное количество</div></div>
+<div class="card"><div class="eyebrow">Никотин*</div><div class="big" id="nic">0 мг</div><div class="sub">расчётное количество</div></div>
+</section>
+<h2>Польза для организма</h2><section class="timeline" id="benefits"></section>
+<h2>Настроить счётчик</h2><section class="card"><div class="settings">
+<div class="field"><label for="quit">Дата отказа</label><input id="quit" type="date"></div>
+<div class="field"><label for="daily">Сигарет в день</label><input id="daily" type="number" min="1" max="100" value="10"></div>
+<div class="field"><label for="price">Цена пачки (₽)</label><input id="price" type="number" min="0" step="1" value="200"></div>
+<div class="field"><label for="pack">Сигарет в пачке</label><input id="pack" type="number" min="1" max="100" value="20"></div>
+</div><button id="save">Сохранить настройки</button><div class="note">Настройки сохраняются только в этом браузере на устройстве. Дата считается с начала выбранного дня.</div></section>
+<p class="note">*Смола и никотин — ориентировочные оценки по введённым средним значениям на сигарету (10 мг смолы и 1 мг никотина). Это не измерение фактического попадания в организм и не медицинская оценка.</p>
+</main><footer>Не Курю · Маленькие шаги складываются в большие перемены</footer>
+<script>
+const $=id=>document.getElementById(id);
+const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+$('quit').value=today.toISOString().slice(0,10);
+const milestones=[
+[0,'Первый день','Организм начинает восстанавливаться после последней сигареты.'],
+[1,'Через 1 день','Уровень угарного газа в крови снижается, кислороду становится легче переноситься.'],
+[2,'Через 2 дня','Никотин в организме значительно снижается; могут меняться вкус и обоняние.'],
+[3,'Через 3 дня','Дыхание может ощущаться свободнее; возможны временные симптомы отмены.'],
+[7,'1 неделя','Ты уже закрепляешь новый ритм. Сон, настроение и тяга могут колебаться.'],
+[14,'2 недели','Кровообращение и переносимость нагрузки могут постепенно улучшаться.'],
+[30,'1 месяц','Кашель и одышка у многих постепенно уменьшаются.'],
+[90,'3 месяца','Работа лёгких и кровообращение могут заметно улучшаться.'],
+[365,'1 год','Продолжение отказа снижает долгосрочные риски для здоровья.']
+];
+function plural(n,a,b,c){n=Math.abs(n)%100;let n1=n%10;return n>10&&n<20?c:n1>1&&n1<5?b:n1===1?a:c}
+function render(){let start=new Date($('quit').value+'T00:00:00');if(isNaN(start)){return}let now=new Date();now.setHours(0,0,0,0);let days=Math.max(0,Math.floor((now-start)/86400000));let daily=Math.max(0,Number($('daily').value)||0),price=Math.max(0,Number($('price').value)||0),pack=Math.max(1,Number($('pack').value)||20);let cigarettes=days*daily;
+$('days').textContent=days+' '+plural(days,'день','дня','дней');$('since').textContent='С даты '+start.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+$('money').textContent=Math.round(cigarettes/pack*price).toLocaleString('ru-RU')+' ₽';$('cigs').textContent=cigarettes.toLocaleString('ru-RU');$('tar').textContent=(cigarettes*10/1000).toLocaleString('ru-RU',{maximumFractionDigits:2})+' г';$('nic').textContent=(cigarettes*1).toLocaleString('ru-RU')+' мг';
+$('benefits').innerHTML=milestones.filter(m=>m[0]<=Math.max(days,0)).slice(-4).reverse().map(m=>'<article class="milestone"><span class="dot"></span><div><b>'+m[1]+'</b><p>'+m[2]+'</p></div></article>').join('')||'<article class="milestone"><span class="dot"></span><div><b>Твой первый шаг</b><p>Выбери дату отказа. Мы будем отмечать прогресс вместе с тобой.</p></div></article>';
+}
+$('save').addEventListener('click',()=>{localStorage.setItem('nekuryu-settings',JSON.stringify({quit:$('quit').value,daily:$('daily').value,price:$('price').value,pack:$('pack').value}));render();$('save').textContent='Сохранено ✓';setTimeout(()=>$('save').textContent='Сохранить настройки',1500)});
+try{const s=JSON.parse(localStorage.getItem('nekuryu-settings')||'null');if(s){for(const k of ['quit','daily','price','pack'])if(s[k]!==undefined)$(k).value=s[k]}}catch(e){}
+render();
+</script></body></html>
