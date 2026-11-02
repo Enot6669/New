@@ -1,0 +1,8 @@
+{
+  "appId": "com.enot.nekuru",
+  "appName": "Не Курю",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
